@@ -14,10 +14,6 @@ A simple and robust interface, powered by the MailerLite API to manage your mail
 - If you wish to use the  default migrations, run `php artisan migrate` or import the sql file in the root folder called  `subscriba.sql` into your database
 - Then run `php artisan serve` to fire up a development server for your project
 
-
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
 ## TODO
 - An authentication layer to secure access
 - Advanced user management with the MailerLite service
@@ -31,6 +27,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 - Vuejs
 - JQuery
 - Nginx
+
 
 ## Credit
 - Mozilla Firefox (Image Banner)
