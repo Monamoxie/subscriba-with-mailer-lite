@@ -22,6 +22,10 @@
     },
     "dependencies": {
         "@saeris/vue-spinners": "^1.0.8",
+        "bootstrap": "^3.4.1",
+        "datatables.net": "^1.10.25",
+        "datatables.net-dt": "^1.1.0",
+        "jquery": "^3.6.0",
         "resolve-url-loader": "^4.0.0",
         "vee-validate": "^3.4.11",
         "vue": "^2.6.14",

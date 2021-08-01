@@ -21,8 +21,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'v1'], function () {
-    Route::post('/api_key/store', [ApiKeysController::class, 'store']);
-    Route::get('/api_key', [ApiKeysController::class, 'index']);
-    Route::post('/subscribe', [SubscribersController::class, 'store']);
-    Route::get('/subscribe', [SubscribersController::class, 'index']);
+    
+    Route::post('/api_keys', [ApiKeysController::class, 'store']);
+    Route::get('/api_keys', [ApiKeysController::class, 'index']);
+
+    Route::post('/subscribers', [SubscribersController::class, 'store']);
+    Route::get('/subscribers', [SubscribersController::class, 'index']);
+    Route::put('/subscribers', [SubscribersController::class, 'update']);
+    Route::delete('/subscribers', [SubscribersController::class, 'delete']);
+
+   
 });

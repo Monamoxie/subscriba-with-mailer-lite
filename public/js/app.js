@@ -8913,7 +8913,7 @@ __webpack_require__.r(__webpack_exports__);
   actions: {
     saveApiKey: function saveApiKey(context, payload) {
       return new Promise(function (resolve, reject) {
-        axios.post('api_key/store', payload).then(function (response) {
+        axios.post('api_keys', payload).then(function (response) {
           resolve(response);
         })["catch"](function (errors) {
           reject(errors);
@@ -8922,7 +8922,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     getApiKey: function getApiKey(context, payload) {
       return new Promise(function (resolve, reject) {
-        axios.get('api_key').then(function (response) {
+        axios.get('api_keys').then(function (response) {
           resolve(response);
         })["catch"](function (errors) {
           reject(errors);
@@ -8931,7 +8931,38 @@ __webpack_require__.r(__webpack_exports__);
     },
     subscribe: function subscribe(context, payload) {
       return new Promise(function (resolve, reject) {
-        axios.post('subscribe', payload).then(function (response) {
+        axios.post('subscribers', payload).then(function (response) {
+          resolve(response);
+        })["catch"](function (errors) {
+          reject(errors);
+        });
+      });
+    },
+    subscribers: function subscribers(context, payload) {
+      return new Promise(function (resolve, reject) {
+        axios.get('subscribers').then(function (response) {
+          resolve(response);
+        })["catch"](function (errors) {
+          reject(errors);
+        });
+      });
+    },
+    editSubscriber: function editSubscriber(context, payload) {
+      return new Promise(function (resolve, reject) {
+        axios.put('subscribers', payload).then(function (response) {
+          resolve(response);
+        })["catch"](function (errors) {
+          reject(errors);
+        });
+      });
+    },
+    deleteSubscriber: function deleteSubscriber(context, payload) {
+      return new Promise(function (resolve, reject) {
+        axios["delete"]('subscribers', {
+          data: {
+            email: payload.email
+          }
+        }).then(function (response) {
           resolve(response);
         })["catch"](function (errors) {
           reject(errors);

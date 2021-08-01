@@ -13,7 +13,7 @@ export default {
     actions: {
         saveApiKey (context, payload) {
             return new Promise((resolve, reject) => {
-                axios.post('api_key/store', payload).then(response => {
+                axios.post('api_keys', payload).then(response => {
                     resolve(response)
                 }).catch(errors => {
                     reject(errors)
@@ -22,7 +22,7 @@ export default {
         },
         getApiKey (context, payload) {
             return new Promise((resolve, reject) => {
-                axios.get('api_key').then(response => {
+                axios.get('api_keys').then(response => {
                     resolve(response)
                 }).catch(errors => {
                     reject(errors)
@@ -31,7 +31,38 @@ export default {
         },
         subscribe (context, payload) {
             return new Promise((resolve, reject) => {
-                axios.post('subscribe', payload).then(response => {
+                axios.post('subscribers', payload).then(response => {
+                    resolve(response)
+                }).catch(errors => {
+                    reject(errors)
+                })
+            })
+        },
+        subscribers (context, payload) {
+            return new Promise((resolve, reject) => {
+                axios.get('subscribers').then(response => {
+                    resolve(response)
+                }).catch(errors => {
+                    reject(errors)
+                })
+            })
+        },
+        editSubscriber (context, payload) {
+            return new Promise((resolve, reject) => {
+                axios.put('subscribers', payload).then(response => {
+                    resolve(response)
+                }).catch(errors => {
+                    reject(errors)
+                })
+            })
+        },
+        deleteSubscriber (context, payload) {
+            return new Promise((resolve, reject) => {
+                axios.delete('subscribers', {
+                    data: {
+                        email: payload.email
+                    }
+                }).then(response => {
                     resolve(response)
                 }).catch(errors => {
                     reject(errors)
