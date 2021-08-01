@@ -27757,6 +27757,7 @@ var render = function() {
                                                   ),
                                                   _vm._v(" "),
                                                   _c("country-select", {
+                                                    class: "form-control",
                                                     attrs: {
                                                       autocomplete: "",
                                                       countryName: true,
@@ -27798,7 +27799,7 @@ var render = function() {
                                       ],
                                       null,
                                       false,
-                                      3870342200
+                                      2615783420
                                     )
                                   })
                                 ],

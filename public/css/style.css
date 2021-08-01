@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
 .subscriba-form-wrapper {
     padding: 40px 35px;
     border-radius: 22px;
@@ -42,10 +46,6 @@ span.btn {
   max-width: 100%;
   margin: auto;
 }
-. {
-
-}
- 
 .bubbly-button {
     display: inline-block;
     font-size: 1em;
@@ -120,4 +120,40 @@ span.btn {
     background-color: darken(#ff0081, 5%);
     box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
   }
-
+.home-wrapper {
+  margin: 15px auto;
+}
+.home-wrapper h1 {
+  font-size: 3.8em;
+  margin: 0 auto 10px;
+  position: relative;
+}
+.home-wrapper h1 span.dot{
+  color: #ff0081;
+  font-size: 2em;
+  position: absolute;
+  top: 10px;
+}
+.side-hero img {
+  margin-top: 40px;
+}
+ 
+.logo-container {
+  line-height: 0;
+  height: 32px;
+}
+.logo-container {
+  margin: 16px 16px 16px 0;
+}
+.header-content {
+  zoom: 1;
+  position: relative; 
+}
+.header-content .logo-container,
+.header-content .nav-menu {
+  flex: 0 1 100%;
+}
+.header-content .nav-menu {
+  text-align: right;
+  margin-top: 12px;
+}

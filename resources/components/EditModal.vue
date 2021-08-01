@@ -29,7 +29,7 @@
                                     <validation-provider rules="required" v-slot="{ errors }" name="Country">
                                         <div class="form-group">
                                             <label for="validationDefault01">Country</label>
-                                            <country-select autocomplete :countryName="true" v-model="editCountry" :country="country" topCountry="US" required/>
+                                            <country-select autocomplete :class="'form-control'" :countryName="true" v-model="editCountry" :country="country" topCountry="US" required/>
                                         </div>
                                         <p v-if="errors.length > 0" class="text-danger text-left m-o p-o">
                                             <small>{{ errors[0] }}</small>

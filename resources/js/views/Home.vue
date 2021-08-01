@@ -1,71 +1,65 @@
 <template>
-    <div class="home-wrapper">
-        <div id="outer-wrapper">
-            <main role="main">
-                <div class="c-block has-media-hide t-products">
-                    <div class="c-block-container">
-                        <div class="c-block-body l-v-center">
-                            <h1 class="mzp-has-zap-14">Be part <strong>of</strong> something new </h1>
-                            <div class="subscriba-form-wrapper subcriba-bx-shadow1" v-if="!subscribeSuccess">
-                                <ErrorDisplayBoard v-if="errorResponse.length > 0 && errorResponse[0].code != 200"
-                                :serverResponse="errorResponse"></ErrorDisplayBoard>
-                                <form @submit.prevent="subscribe">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <validation-provider rules="required" v-slot="{ errors }" name="Name">
-                                                <div class="form-group">
-                                                    <label for="name">Name</label>
-                                                    <input type="text" v-model="name" class="form-control" placeholder="Your name" required>
-                                                </div>
-                                                <p v-if="errors.length > 0" class="text-danger text-left m-o p-o">
-                                                    <small>{{ errors[0] }}</small>
-                                                </p>
-                                            </validation-provider>
+    <div class="home-wrapper container">
+        <div class="row">
+                <div class="col-md-6">
+                    <h1>Be part <strong>of</strong> something new <span class="dot">.</span> </h1>
+                    <div class="subscriba-form-wrapper subcriba-bx-shadow1" v-if="!subscribeSuccess">
+                        <ErrorDisplayBoard v-if="errorResponse.length > 0 && errorResponse[0].code != 200"
+                        :serverResponse="errorResponse"></ErrorDisplayBoard>
+                        <form @submit.prevent="subscribe">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <validation-provider rules="required" v-slot="{ errors }" name="Name">
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" v-model="name" class="form-control" placeholder="Your name" required>
                                         </div>
-                                        <div class="col-md-6">
-                                            <validation-provider rules="required" v-slot="{ errors }" name="Country">
-                                                <div class="form-group">
-                                                    <label for="validationDefault01">Country</label>
-                                                    <country-select autocomplete :countryName="true" v-model="country" :country="country" topCountry="US" required/>
-                                                </div>
-                                                <p v-if="errors.length > 0" class="text-danger text-left m-o p-o">
-                                                    <small>{{ errors[0] }}</small>
-                                                </p>
-                                            </validation-provider>
+                                        <p v-if="errors.length > 0" class="text-danger text-left m-o p-o">
+                                            <small>{{ errors[0] }}</small>
+                                        </p>
+                                    </validation-provider>
+                                </div>
+                                <div class="col-md-6">
+                                    <validation-provider rules="required" v-slot="{ errors }" name="Country">
+                                        <div class="form-group">
+                                            <label for="validationDefault01">Country</label>
+                                            <country-select autocomplete  :class="'form-control'" :countryName="true" v-model="country" :country="country" topCountry="US" required/>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <validation-provider rules="required|email" v-slot="{ errors }" name="Email">
-                                                <div class="form-group">
-                                                    <label for="validationDefault01">Email</label>
-                                                    <input type="email" v-model="email" class="form-control" placeholder="Email address" required>
-                                                </div>
-                                                <p v-if="errors.length > 0" class="text-danger text-left m-o p-o">
-                                                    <small>{{ errors[0] }}</small>
-                                                </p>
-                                            </validation-provider>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-primary bubbly-button theme1" type="submit">
-                                            <span v-if="processing" class="loader-palette">
-                                                <PulseLoader :color="'#ffffff'" :size="12"></PulseLoader>
-                                            </span>
-                                            <span v-else>Subscribe</span>
-                                        </button>
-                                    </div>
-                                </form>
+                                        <p v-if="errors.length > 0" class="text-danger text-left m-o p-o">
+                                            <small>{{ errors[0] }}</small>
+                                        </p>
+                                    </validation-provider>
+                                </div>
                             </div>
-                            <SuccessDisplayBoard  v-else :serverResponse="successResponse" />
-                        </div>
-                        <div class="c-block-media l-fit-flush-top l-constrain-width" style="margin-top:0px;">
-                            <img class="c-block-media-img" src="img/hero.fadf5522c9bd.jpg" width="670" height="464">
-                        </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <validation-provider rules="required|email" v-slot="{ errors }" name="Email">
+                                        <div class="form-group">
+                                            <label for="validationDefault01">Email</label>
+                                            <input type="email" v-model="email" class="form-control" placeholder="Email address" required>
+                                        </div>
+                                        <p v-if="errors.length > 0" class="text-danger text-left m-o p-o">
+                                            <small>{{ errors[0] }}</small>
+                                        </p>
+                                    </validation-provider>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary bubbly-button theme1" type="submit">
+                                    <span v-if="processing" class="loader-palette">
+                                        <PulseLoader :color="'#ffffff'" :size="12"></PulseLoader>
+                                    </span>
+                                    <span v-else>Subscribe</span>
+                                </button>
+                            </div>
+                        </form>
                     </div>
+                    <SuccessDisplayBoard  v-else :serverResponse="successResponse" />
                 </div>
-            </main>
-        </div>
+                <div class="col-md-6 side-hero">
+                    <img src="img/hero.fadf5522c9bd.jpg">
+                </div>
+            </div>
     </div>
 </template>
 <script>
@@ -75,9 +69,9 @@ export default {
     name: 'Home',
     data () {
         return {
-            name: 'User2',
+            name: '',
             country: 'United States',
-            email: 'user2@gmail.com',
+            email: '',
             processing: false,
             errorResponse: [],
             successResponse: [],

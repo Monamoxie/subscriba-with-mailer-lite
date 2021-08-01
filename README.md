@@ -1,56 +1,44 @@
 <p align="left"><a href="https://github.com/monamoxie"><img src="public/img/logo.png" width="110" ></a></p>
 ## About Subscriba
 
-A simple interface, powered by the MailerLite API to manager your mailing list. Designed to be simplea, intuitive and easy to use. 
+A simple and robust interface, powered by the MailerLite API to manager your mailing list. Designed to be simple, intuitive and easy to use. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## How to Use
+- Create an account on [MailerLite](https://mailerlite.com), and get an API Key
+- Clone the repo  `git clone https://github.com/Monamoxie/subscriba-with-mailer-lite.git`
+- After that, cd into cloned directory `cd subscriba-with-mailer-lite`
+- And install all composer dependencies with `composer install`
+- Also install npm dependencies with `npm install`
+- Run `php artisan key:generate` to set up an encryption key for the project
+- Create your database if you don't have one yet and remember to update .env file with the correct details
+- If you wish to use the  default migrations, run `php artisan migrate` or import the sql file in the root folder called  `subscriba.sql` into your database
+- Then run `php artisan serve` to fire up a development server for your project
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## TODO
+- An authentication layer to secure access
+- Advanced user management with the MailerLite service
+- Responsiveness and mobile friendly
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### TECH STACK
 
-### Premium Partners
+- PHP
+- Laravel
+- Javascript
+- Vuejs
+- JQuery
+- Nginx
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+<p align="left"><a href="https://github.com/monamoxie"><img src="public/img/snapshot_home.png"></a></p>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<p align="left"><a href="https://github.com/monamoxie"><img src="public/img/snapshot_table.png"></a></p>
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Subscriba is open-sourced and licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 https://webdeasy.de/en/top-css-buttons-en/ credit button effect

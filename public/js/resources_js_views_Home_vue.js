@@ -158,21 +158,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Home',
   data: function data() {
     return {
-      name: 'User2',
+      name: '',
       country: 'United States',
-      email: 'user2@gmail.com',
+      email: '',
       processing: false,
       errorResponse: [],
       successResponse: [],
@@ -999,351 +993,313 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "home-wrapper" }, [
-    _c("div", { attrs: { id: "outer-wrapper" } }, [
-      _c("main", { attrs: { role: "main" } }, [
-        _c("div", { staticClass: "c-block has-media-hide t-products" }, [
-          _c("div", { staticClass: "c-block-container" }, [
-            _c(
-              "div",
-              { staticClass: "c-block-body l-v-center" },
-              [
-                _vm._m(0),
-                _vm._v(" "),
-                !_vm.subscribeSuccess
-                  ? _c(
-                      "div",
-                      {
-                        staticClass:
-                          "subscriba-form-wrapper subcriba-bx-shadow1"
-                      },
-                      [
-                        _vm.errorResponse.length > 0 &&
-                        _vm.errorResponse[0].code != 200
-                          ? _c("ErrorDisplayBoard", {
-                              attrs: { serverResponse: _vm.errorResponse }
+  return _c("div", { staticClass: "home-wrapper container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c(
+        "div",
+        { staticClass: "col-md-6" },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          !_vm.subscribeSuccess
+            ? _c(
+                "div",
+                { staticClass: "subscriba-form-wrapper subcriba-bx-shadow1" },
+                [
+                  _vm.errorResponse.length > 0 &&
+                  _vm.errorResponse[0].code != 200
+                    ? _c("ErrorDisplayBoard", {
+                        attrs: { serverResponse: _vm.errorResponse }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "form",
+                    {
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.subscribe.apply(null, arguments)
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-6" },
+                          [
+                            _c("validation-provider", {
+                              attrs: { rules: "required", name: "Name" },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function(ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form-group" },
+                                          [
+                                            _c(
+                                              "label",
+                                              { attrs: { for: "name" } },
+                                              [_vm._v("Name")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.name,
+                                                  expression: "name"
+                                                }
+                                              ],
+                                              staticClass: "form-control",
+                                              attrs: {
+                                                type: "text",
+                                                placeholder: "Your name",
+                                                required: ""
+                                              },
+                                              domProps: { value: _vm.name },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.name = $event.target.value
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        errors.length > 0
+                                          ? _c(
+                                              "p",
+                                              {
+                                                staticClass:
+                                                  "text-danger text-left m-o p-o"
+                                              },
+                                              [
+                                                _c("small", [
+                                                  _vm._v(_vm._s(errors[0]))
+                                                ])
+                                              ]
+                                            )
+                                          : _vm._e()
+                                      ]
+                                    }
+                                  }
+                                ],
+                                null,
+                                false,
+                                3882183420
+                              )
                             })
-                          : _vm._e(),
+                          ],
+                          1
+                        ),
                         _vm._v(" "),
                         _c(
-                          "form",
+                          "div",
+                          { staticClass: "col-md-6" },
+                          [
+                            _c("validation-provider", {
+                              attrs: { rules: "required", name: "Country" },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function(ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form-group" },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                attrs: {
+                                                  for: "validationDefault01"
+                                                }
+                                              },
+                                              [_vm._v("Country")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("country-select", {
+                                              class: "form-control",
+                                              attrs: {
+                                                autocomplete: "",
+                                                countryName: true,
+                                                country: _vm.country,
+                                                topCountry: "US",
+                                                required: ""
+                                              },
+                                              model: {
+                                                value: _vm.country,
+                                                callback: function($$v) {
+                                                  _vm.country = $$v
+                                                },
+                                                expression: "country"
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        errors.length > 0
+                                          ? _c(
+                                              "p",
+                                              {
+                                                staticClass:
+                                                  "text-danger text-left m-o p-o"
+                                              },
+                                              [
+                                                _c("small", [
+                                                  _vm._v(_vm._s(errors[0]))
+                                                ])
+                                              ]
+                                            )
+                                          : _vm._e()
+                                      ]
+                                    }
+                                  }
+                                ],
+                                null,
+                                false,
+                                458436416
+                              )
+                            })
+                          ],
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          { staticClass: "col-md-12" },
+                          [
+                            _c("validation-provider", {
+                              attrs: { rules: "required|email", name: "Email" },
+                              scopedSlots: _vm._u(
+                                [
+                                  {
+                                    key: "default",
+                                    fn: function(ref) {
+                                      var errors = ref.errors
+                                      return [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form-group" },
+                                          [
+                                            _c(
+                                              "label",
+                                              {
+                                                attrs: {
+                                                  for: "validationDefault01"
+                                                }
+                                              },
+                                              [_vm._v("Email")]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("input", {
+                                              directives: [
+                                                {
+                                                  name: "model",
+                                                  rawName: "v-model",
+                                                  value: _vm.email,
+                                                  expression: "email"
+                                                }
+                                              ],
+                                              staticClass: "form-control",
+                                              attrs: {
+                                                type: "email",
+                                                placeholder: "Email address",
+                                                required: ""
+                                              },
+                                              domProps: { value: _vm.email },
+                                              on: {
+                                                input: function($event) {
+                                                  if ($event.target.composing) {
+                                                    return
+                                                  }
+                                                  _vm.email =
+                                                    $event.target.value
+                                                }
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        errors.length > 0
+                                          ? _c(
+                                              "p",
+                                              {
+                                                staticClass:
+                                                  "text-danger text-left m-o p-o"
+                                              },
+                                              [
+                                                _c("small", [
+                                                  _vm._v(_vm._s(errors[0]))
+                                                ])
+                                              ]
+                                            )
+                                          : _vm._e()
+                                      ]
+                                    }
+                                  }
+                                ],
+                                null,
+                                false,
+                                911497228
+                              )
+                            })
+                          ],
+                          1
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group" }, [
+                        _c(
+                          "button",
                           {
-                            on: {
-                              submit: function($event) {
-                                $event.preventDefault()
-                                return _vm.subscribe.apply(null, arguments)
-                              }
-                            }
+                            staticClass: "btn btn-primary bubbly-button theme1",
+                            attrs: { type: "submit" }
                           },
                           [
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-6" },
-                                [
-                                  _c("validation-provider", {
-                                    attrs: { rules: "required", name: "Name" },
-                                    scopedSlots: _vm._u(
-                                      [
-                                        {
-                                          key: "default",
-                                          fn: function(ref) {
-                                            var errors = ref.errors
-                                            return [
-                                              _c(
-                                                "div",
-                                                { staticClass: "form-group" },
-                                                [
-                                                  _c(
-                                                    "label",
-                                                    { attrs: { for: "name" } },
-                                                    [_vm._v("Name")]
-                                                  ),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    directives: [
-                                                      {
-                                                        name: "model",
-                                                        rawName: "v-model",
-                                                        value: _vm.name,
-                                                        expression: "name"
-                                                      }
-                                                    ],
-                                                    staticClass: "form-control",
-                                                    attrs: {
-                                                      type: "text",
-                                                      placeholder: "Your name",
-                                                      required: ""
-                                                    },
-                                                    domProps: {
-                                                      value: _vm.name
-                                                    },
-                                                    on: {
-                                                      input: function($event) {
-                                                        if (
-                                                          $event.target
-                                                            .composing
-                                                        ) {
-                                                          return
-                                                        }
-                                                        _vm.name =
-                                                          $event.target.value
-                                                      }
-                                                    }
-                                                  })
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              errors.length > 0
-                                                ? _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "text-danger text-left m-o p-o"
-                                                    },
-                                                    [
-                                                      _c("small", [
-                                                        _vm._v(
-                                                          _vm._s(errors[0])
-                                                        )
-                                                      ])
-                                                    ]
-                                                  )
-                                                : _vm._e()
-                                            ]
-                                          }
-                                        }
-                                      ],
-                                      null,
-                                      false,
-                                      3882183420
-                                    )
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "col-md-6" },
-                                [
-                                  _c("validation-provider", {
-                                    attrs: {
-                                      rules: "required",
-                                      name: "Country"
-                                    },
-                                    scopedSlots: _vm._u(
-                                      [
-                                        {
-                                          key: "default",
-                                          fn: function(ref) {
-                                            var errors = ref.errors
-                                            return [
-                                              _c(
-                                                "div",
-                                                { staticClass: "form-group" },
-                                                [
-                                                  _c(
-                                                    "label",
-                                                    {
-                                                      attrs: {
-                                                        for:
-                                                          "validationDefault01"
-                                                      }
-                                                    },
-                                                    [_vm._v("Country")]
-                                                  ),
-                                                  _vm._v(" "),
-                                                  _c("country-select", {
-                                                    attrs: {
-                                                      autocomplete: "",
-                                                      countryName: true,
-                                                      country: _vm.country,
-                                                      topCountry: "US",
-                                                      required: ""
-                                                    },
-                                                    model: {
-                                                      value: _vm.country,
-                                                      callback: function($$v) {
-                                                        _vm.country = $$v
-                                                      },
-                                                      expression: "country"
-                                                    }
-                                                  })
-                                                ],
-                                                1
-                                              ),
-                                              _vm._v(" "),
-                                              errors.length > 0
-                                                ? _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "text-danger text-left m-o p-o"
-                                                    },
-                                                    [
-                                                      _c("small", [
-                                                        _vm._v(
-                                                          _vm._s(errors[0])
-                                                        )
-                                                      ])
-                                                    ]
-                                                  )
-                                                : _vm._e()
-                                            ]
-                                          }
-                                        }
-                                      ],
-                                      null,
-                                      false,
-                                      1248645060
-                                    )
-                                  })
-                                ],
-                                1
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-12" },
-                                [
-                                  _c("validation-provider", {
-                                    attrs: {
-                                      rules: "required|email",
-                                      name: "Email"
-                                    },
-                                    scopedSlots: _vm._u(
-                                      [
-                                        {
-                                          key: "default",
-                                          fn: function(ref) {
-                                            var errors = ref.errors
-                                            return [
-                                              _c(
-                                                "div",
-                                                { staticClass: "form-group" },
-                                                [
-                                                  _c(
-                                                    "label",
-                                                    {
-                                                      attrs: {
-                                                        for:
-                                                          "validationDefault01"
-                                                      }
-                                                    },
-                                                    [_vm._v("Email")]
-                                                  ),
-                                                  _vm._v(" "),
-                                                  _c("input", {
-                                                    directives: [
-                                                      {
-                                                        name: "model",
-                                                        rawName: "v-model",
-                                                        value: _vm.email,
-                                                        expression: "email"
-                                                      }
-                                                    ],
-                                                    staticClass: "form-control",
-                                                    attrs: {
-                                                      type: "email",
-                                                      placeholder:
-                                                        "Email address",
-                                                      required: ""
-                                                    },
-                                                    domProps: {
-                                                      value: _vm.email
-                                                    },
-                                                    on: {
-                                                      input: function($event) {
-                                                        if (
-                                                          $event.target
-                                                            .composing
-                                                        ) {
-                                                          return
-                                                        }
-                                                        _vm.email =
-                                                          $event.target.value
-                                                      }
-                                                    }
-                                                  })
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              errors.length > 0
-                                                ? _c(
-                                                    "p",
-                                                    {
-                                                      staticClass:
-                                                        "text-danger text-left m-o p-o"
-                                                    },
-                                                    [
-                                                      _c("small", [
-                                                        _vm._v(
-                                                          _vm._s(errors[0])
-                                                        )
-                                                      ])
-                                                    ]
-                                                  )
-                                                : _vm._e()
-                                            ]
-                                          }
-                                        }
-                                      ],
-                                      null,
-                                      false,
-                                      911497228
-                                    )
-                                  })
-                                ],
-                                1
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "form-group" }, [
-                              _c(
-                                "button",
-                                {
-                                  staticClass:
-                                    "btn btn-primary bubbly-button theme1",
-                                  attrs: { type: "submit" }
-                                },
-                                [
-                                  _vm.processing
-                                    ? _c(
-                                        "span",
-                                        { staticClass: "loader-palette" },
-                                        [
-                                          _c("PulseLoader", {
-                                            attrs: {
-                                              color: "#ffffff",
-                                              size: 12
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      )
-                                    : _c("span", [_vm._v("Subscribe")])
-                                ]
-                              )
-                            ])
+                            _vm.processing
+                              ? _c(
+                                  "span",
+                                  { staticClass: "loader-palette" },
+                                  [
+                                    _c("PulseLoader", {
+                                      attrs: { color: "#ffffff", size: 12 }
+                                    })
+                                  ],
+                                  1
+                                )
+                              : _c("span", [_vm._v("Subscribe")])
                           ]
                         )
-                      ],
-                      1
-                    )
-                  : _c("SuccessDisplayBoard", {
-                      attrs: { serverResponse: _vm.successResponse }
-                    })
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _vm._m(1)
-          ])
-        ])
-      ])
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            : _c("SuccessDisplayBoard", {
+                attrs: { serverResponse: _vm.successResponse }
+              })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _vm._m(1)
     ])
   ])
 }
@@ -1352,33 +1308,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("h1", { staticClass: "mzp-has-zap-14" }, [
+    return _c("h1", [
       _vm._v("Be part "),
       _c("strong", [_vm._v("of")]),
-      _vm._v(" something new ")
+      _vm._v(" something new "),
+      _c("span", { staticClass: "dot" }, [_vm._v(".")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "c-block-media l-fit-flush-top l-constrain-width",
-        staticStyle: { "margin-top": "0px" }
-      },
-      [
-        _c("img", {
-          staticClass: "c-block-media-img",
-          attrs: {
-            src: "img/hero.fadf5522c9bd.jpg",
-            width: "670",
-            height: "464"
-          }
-        })
-      ]
-    )
+    return _c("div", { staticClass: "col-md-6 side-hero" }, [
+      _c("img", { attrs: { src: "img/hero.fadf5522c9bd.jpg" } })
+    ])
   }
 ]
 render._withStripped = true

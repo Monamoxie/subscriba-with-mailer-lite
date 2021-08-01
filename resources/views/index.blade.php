@@ -8,8 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <link href="css/pr1.css" rel="stylesheet" type="text/css" />
-    <link href="css/pr2.css" rel="stylesheet" type="text/css" /> 
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -18,32 +16,29 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 </head>
 <body> 
-    <div class="c-navigation top-header-navigation mzp-is-sticky">
-        <div class="c-navigation-l-content">
-            <div class="c-navigation-container">
-                <div class="c-navigation-logo">
-                    <a href="/">
-                        <img src="/img/logo.png" alt="Subscriba Logo" >
-                    </a>
-                </div>
+    <header class="header-content subcriba-bx-shadow1">
+        <div class="container d-flex"> 
+            <div class="logo-container">
+                <a href="/">
+                    <img src="/img/logo.png" alt="Subscriba Logo" >
+                </a>
+            </div> 
+            <div class="nav-menu">
 
-                <div class="c-navigation-items" id="c-navigation-items">
-
-                    <div class="c-navigation-shoulder menu-btn"> 
-                        <div class="mzp-c-button-download-container c-button-download-thanks">
-                            <a class="btn btn-primary" href="/api_key">
-                                Store API Key
-                            </a>
-                            <a href="/subscribers" class="btn btn-primary">
-                                View Subscribers
-                            </a>
-                        </div>
+                <div class="c-navigation-shoulder menu-btn"> 
+                    <div class="mzp-c-button-download-container c-button-download-thanks">
+                        <a class="btn btn-primary" href="/api_key">
+                            Store API Key
+                        </a>
+                        <a href="/subscribers" class="btn btn-primary">
+                            View Subscribers
+                        </a>
                     </div>
-
                 </div>
+
             </div>
         </div>
-    </div>
+    </header>
     <div id="app"></div>
 </body>
 </html>
