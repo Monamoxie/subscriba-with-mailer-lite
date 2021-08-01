@@ -1,7 +1,7 @@
 <p align="left" style="margin: 50px 0"><a href="https://github.com/monamoxie"><img src="public/img/logo.png" width="110" ></a></p>
 
 
-A simple and robust interface, powered by the MailerLite API to manager your mailing list. Designed to be simple, intuitive and easy to use. 
+A simple and robust interface, powered by the MailerLite API to manage your mailing list. Designed to be simple, intuitive and easy to use. 
 
 ## How to Use
 - Create an account on [MailerLite](https://mailerlite.com), and get an API Key
