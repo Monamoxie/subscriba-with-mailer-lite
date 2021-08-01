@@ -14,7 +14,7 @@ class ApiKeysController extends Controller
     {
         $response = Http::acceptJson()->withHeaders([
             'X-MailerLite-ApiKey' => $request->api_key
-        ])->get('https://api.mailerlite.com/api/v2');
+        ])->get(config('app.mailer_lite_base_Url'));
         $content = json_decode($response->body());
         if ($response->successful()) {
             $store = $apiKeyService->store($request->api_key); 

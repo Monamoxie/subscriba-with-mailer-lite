@@ -32,7 +32,7 @@ class SubscribersController extends Controller
             'Host' => 'api.mailerlite.com',
             'Content-Type' => 'application/json',
             'X-MailerLite-ApiKey' => $this->apiKey
-        ])->post('https://api.mailerlite.com/api/v2/subscribers', [
+        ])->post(config('app.mailer_lite_base_Url') . '/subscribers', [
             'email' => $request->email, 
             'name' => $request->name,
             'fields'=> [ "country" => $request->country ]
@@ -49,7 +49,7 @@ class SubscribersController extends Controller
     {
         $response = Http::acceptJson()->withHeaders([
             'X-MailerLite-ApiKey' => $this->apiKey
-        ])->get('https://api.mailerlite.com/api/v2/subscribers');
+        ])->get(config('app.mailer_lite_base_Url') . '/subscribers');
         $content = json_decode($response->body());
         if ($response->successful()) {
             $data = [];
@@ -85,7 +85,7 @@ class SubscribersController extends Controller
             'Host' => 'api.mailerlite.com',
             'Content-Type' => 'application/json',
             'X-MailerLite-ApiKey' => $this->apiKey
-        ])->put('https://api.mailerlite.com/api/v2/subscribers/' . $request->email, [
+        ])->put(config('app.mailer_lite_base_Url') . '/subscribers/' . $request->email, [
             'name' => $request->name,
             'fields'=> [ "country" => $request->country ]
         ]);
@@ -103,7 +103,7 @@ class SubscribersController extends Controller
             'Host' => 'api.mailerlite.com',
             'Content-Type' => 'application/json',
             'X-MailerLite-ApiKey' => $this->apiKey
-        ])->delete('https://api.mailerlite.com/api/v2/subscribers/' . $request->email);
+        ])->delete(config('app.mailer_lite_base_Url') . '/subscribers/' . $request->email);
         $content = json_decode($response->body());
         if ($response->successful()) {
             return $this->successResponse('Subscriber details have been successfully deleted', $content);

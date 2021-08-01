@@ -1,6 +1,5 @@
 <p align="left" style="margin: 50px 0"><a href="https://github.com/monamoxie"><img src="public/img/logo.png" width="110" ></a></p>
 
-## About Subscriba
 
 A simple and robust interface, powered by the MailerLite API to manager your mailing list. Designed to be simple, intuitive and easy to use. 
 
@@ -33,6 +32,10 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 - JQuery
 - Nginx
 
+## Credit
+- Mozilla Firefox (Image Banner)
+- Button Effect (https://codepen.io/nourabusoud)
+
 
 <p align="left"><a href="https://github.com/monamoxie"><img src="public/img/snapshot_home.png"></a></p>
 
@@ -41,5 +44,3 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 ## License
 
 Subscriba is open-sourced and licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-https://webdeasy.de/en/top-css-buttons-en/ credit button effect

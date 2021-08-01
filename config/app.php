@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'mailer_lite_base_Url' => env('MAILERLITE_BASE_URL', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
