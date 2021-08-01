@@ -1,4 +1,5 @@
-<p align="left"><a href="https://github.com/monamoxie"><img src="public/img/logo.png" width="110" ></a></p>
+<p align="left" style="margin: 50px 0"><a href="https://github.com/monamoxie"><img src="public/img/logo.png" width="110" ></a></p>
+
 ## About Subscriba
 
 A simple and robust interface, powered by the MailerLite API to manager your mailing list. Designed to be simple, intuitive and easy to use. 
