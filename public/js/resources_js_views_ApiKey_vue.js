@@ -124,6 +124,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -132,6 +135,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       processing: false,
       api_key: '',
+      has_api_key: false,
       errorResponse: [],
       successResponse: [],
       saveSuccess: false
@@ -160,16 +164,16 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     },
-    getApiKey: function getApiKey() {
+    hasApiKey: function hasApiKey() {
       var _this2 = this;
 
-      this.$store.dispatch('core/getApiKey').then(function (response) {
-        _this2.api_key = response.data.data !== null ? response.data.data.api_key : '';
+      this.$store.dispatch('core/hasApiKey').then(function (response) {
+        _this2.has_api_key = response.data;
       });
     }
   },
   mounted: function mounted() {
-    this.getApiKey();
+    this.hasApiKey();
   }
 });
 
@@ -968,111 +972,97 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "subcriba-api-key-wrapper" }, [
-    _c(
-      "div",
-      { staticClass: "form-container subcriba-bx-shadow1" },
-      [
-        _vm.errorResponse.length > 0 && _vm.errorResponse[0].code != 200
-          ? _c("ErrorDisplayBoard", {
-              attrs: { serverResponse: _vm.errorResponse }
-            })
-          : _vm._e(),
-        _vm._v(" "),
-        !_vm.saveSuccess
-          ? _c("div", { staticClass: "row" }, [
-              _c(
-                "div",
-                { staticClass: "col-md-12" },
-                [
-                  _c("validation-provider", {
-                    attrs: { rules: "required", name: "Api key" },
-                    scopedSlots: _vm._u(
-                      [
-                        {
-                          key: "default",
-                          fn: function(ref) {
-                            var errors = ref.errors
-                            return [
-                              _c("div", { staticClass: "form-group" }, [
-                                _c("label", [_vm._v("API Key")]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.api_key,
-                                      expression: "api_key"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  attrs: {
-                                    type: "text",
-                                    placeholder: "MailerLite Api Key"
-                                  },
-                                  domProps: { value: _vm.api_key },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.api_key = $event.target.value
-                                    }
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              errors.length > 0
-                                ? _c(
-                                    "p",
-                                    { staticClass: "text-danger text-left" },
-                                    [_c("small", [_vm._v(_vm._s(errors[0]))])]
-                                  )
-                                : _vm._e()
-                            ]
-                          }
-                        }
-                      ],
-                      null,
-                      false,
-                      3678101365
-                    )
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-12" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary bubbly-button",
-                    attrs: { type: "submit" },
-                    on: { click: _vm.saveApiKey }
-                  },
-                  [
-                    _vm.processing
-                      ? _c(
-                          "span",
-                          { staticClass: "loader-palette" },
-                          [
-                            _c("PulseLoader", {
-                              attrs: { color: "#ffffff", size: 12 }
-                            })
-                          ],
-                          1
-                        )
-                      : _c("span", [_vm._v("Save Api Key")])
-                  ]
-                )
-              ])
+    _c("div", { staticClass: "form-container subcriba-bx-shadow1" }, [
+      _vm.has_api_key
+        ? _c("div", [
+            _c("div", { staticClass: "alert alert-success" }, [
+              _vm._v("Your API key is active")
             ])
-          : _c("SuccessDisplayBoard", {
-              attrs: { serverResponse: _vm.successResponse }
-            })
-      ],
-      1
-    )
+          ])
+        : _c(
+            "div",
+            [
+              _vm.errorResponse.length > 0 && _vm.errorResponse[0].code != 200
+                ? _c("ErrorDisplayBoard", {
+                    attrs: { serverResponse: _vm.errorResponse }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              !_vm.saveSuccess
+                ? _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      { staticClass: "col-md-12" },
+                      [
+                        _c("validation-provider", {
+                          attrs: { rules: "required", name: "Api key" },
+                          scopedSlots: _vm._u(
+                            [
+                              {
+                                key: "default",
+                                fn: function(ref) {
+                                  var errors = ref.errors
+                                  return [
+                                    _c("div", { staticClass: "form-group" }, [
+                                      _c("label", [_vm._v("API Key")]),
+                                      _vm._v(" "),
+                                      _c("input", {
+                                        staticClass: "form-control",
+                                        attrs: {
+                                          type: "text",
+                                          placeholder: "MailerLite Api Key"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("span", [
+                                        _vm._v(" Your API Key is Active ")
+                                      ])
+                                    ])
+                                  ]
+                                }
+                              }
+                            ],
+                            null,
+                            false,
+                            3689977202
+                          )
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-12" }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary bubbly-button",
+                          attrs: { type: "submit" },
+                          on: { click: _vm.saveApiKey }
+                        },
+                        [
+                          _vm.processing
+                            ? _c(
+                                "span",
+                                { staticClass: "loader-palette" },
+                                [
+                                  _c("PulseLoader", {
+                                    attrs: { color: "#ffffff", size: 12 }
+                                  })
+                                ],
+                                1
+                              )
+                            : _c("span", [_vm._v("Save Api Key")])
+                        ]
+                      )
+                    ])
+                  ])
+                : _c("SuccessDisplayBoard", {
+                    attrs: { serverResponse: _vm.successResponse }
+                  })
+            ],
+            1
+          )
+    ])
   ])
 }
 var staticRenderFns = []

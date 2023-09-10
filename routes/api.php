@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function () {
     Route::post('/api_keys', [ApiKeysController::class, 'store']);
     Route::get('/api_keys', [ApiKeysController::class, 'index']);
+    Route::get('/has_api_keys', [ApiKeysController::class, 'hasApiKey']);
     Route::post('/subscribers', [SubscribersController::class, 'store']);
     Route::get('/subscribers', [SubscribersController::class, 'index']);
     Route::put('/subscribers', [SubscribersController::class, 'update']);

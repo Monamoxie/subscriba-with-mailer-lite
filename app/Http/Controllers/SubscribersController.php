@@ -67,7 +67,6 @@ class SubscribersController extends Controller
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($data) {
-                        Log::info('Dwee', [$data['email'], $data['name'], $data['country']]);
                         $btn = ' <span data-tag="'.$data['email'].'" data-c="'.$data['country'].'" data-n="'.$data['name'].'">Edit</span> ';
                         $btn .= '<span data-tag="'.$data['email'].'">Delete</span>';
                         return $btn;

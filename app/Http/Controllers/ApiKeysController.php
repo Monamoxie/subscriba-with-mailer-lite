@@ -33,4 +33,11 @@ class ApiKeysController extends Controller
         return $this->successResponse('Api key returned successfully', 
             $apiKey !== null ? new ApiKeyResource($apiKey): '');
     }
+
+    public function hasApiKey(ApiKeyService $apiKeyService)
+    {
+        dd($apiKeyService->hasApiKey());
+         return $this->successResponse('Data returned successfully', 
+            $apiKeyService->hasApiKey());
+    }
 }

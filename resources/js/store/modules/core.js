@@ -29,6 +29,15 @@ export default {
                 })
             })
         },
+        hasApiKey (context, payload) {
+            return new Promise((resolve, reject) => {
+                axios.get('has_api_keys').then(response => {
+                    resolve(response)
+                }).catch(errors => {
+                    reject(errors)
+                })
+            })
+        },
         subscribe (context, payload) {
             return new Promise((resolve, reject) => {
                 axios.post('subscribers', payload).then(response => {

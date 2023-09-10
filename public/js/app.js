@@ -8929,6 +8929,15 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     },
+    hasApiKey: function hasApiKey(context, payload) {
+      return new Promise(function (resolve, reject) {
+        axios.get('has_api_keys').then(function (response) {
+          resolve(response);
+        })["catch"](function (errors) {
+          reject(errors);
+        });
+      });
+    },
     subscribe: function subscribe(context, payload) {
       return new Promise(function (resolve, reject) {
         axios.post('subscribers', payload).then(function (response) {

@@ -25,4 +25,9 @@ class ApiKeyService
     {
         return ApiKey::first();
     }
+
+    public function hasApiKey()
+    {
+        return ApiKey::exists();
+    }
 }
